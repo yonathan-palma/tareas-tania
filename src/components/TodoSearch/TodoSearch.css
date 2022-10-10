@@ -1,0 +1,11 @@
+.search{
+    border: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    width: 60%;
+    margin-top: 2rem;
+}
+.search:focus-visible{
+    /* outline: 0; */
+    outline: solid 1px #66afe9;
+}
