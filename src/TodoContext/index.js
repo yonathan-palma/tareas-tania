@@ -11,9 +11,10 @@ const TodoContext = createContext();
 
 function TodoProvider(props){
 
-    const {item: todos, saveItem: saveTodos, loading, error} = useLocalStorage("TODOS_V1", defaultTodos);
+    const {item: todos, saveItem: saveTodos, loading, error} = useLocalStorage("TODOS_V1", []);
  
     const [search, setSearch] = useState('');
+    const [openModal, setOpenModal] = useState(false);
 
     const completeTodos = todos.filter(todo=> todo.completed).length;
     const todalTodos = todos.length;
@@ -39,6 +40,16 @@ function TodoProvider(props){
         saveTodos(newTodos)
     }
 
+    const addTodo = (text)=>{
+        const newTodos = [...todos];
+        newTodos.push({
+            completed: false,
+            text 
+        });
+        console.log(newTodos)
+        saveTodos(newTodos)
+    }
+
     //  Retornamos nuestro proveedor con nuestro contexto en la etiqueta value, 
     //  que recibirá a toda nuestra aplicación, por eso necesitamos la prop children
     return(
@@ -51,7 +62,10 @@ function TodoProvider(props){
             setSearch,
             searchTodos,
             completeTodosEvent,
-            deleteTodosEvent
+            deleteTodosEvent,
+            addTodo,
+            openModal, 
+            setOpenModal
         }}>
             {props.children}
         </TodoContext.Provider>
