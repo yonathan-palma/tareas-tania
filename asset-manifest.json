@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/tareas-tania/static/css/main.5e104c51.css",
+    "main.js": "/tareas-tania/static/js/main.3b27d541.js",
+    "index.html": "/tareas-tania/index.html",
+    "static/media/write-svgrepo-com.svg": "/tareas-tania/static/media/write-svgrepo-com.c40e1cd47a890e5a1dec74d35c77ce6d.svg",
+    "main.5e104c51.css.map": "/tareas-tania/static/css/main.5e104c51.css.map",
+    "main.3b27d541.js.map": "/tareas-tania/static/js/main.3b27d541.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e104c51.css",
+    "static/js/main.3b27d541.js"
+  ]
+}
