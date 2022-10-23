@@ -1,0 +1,22 @@
+.icon-container{
+    cursor:  pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.icon-delete{
+    position: absolute;
+    right: 10px;
+}
+.icon-svg{
+    width: 24px;
+    height: 24px;
+    transition: fill .15s;
+}
+.icon-container:hover .icon-check{
+    fill:#4caf50
+}
+.icon-container:hover .icon-delete{
+    fill:#e6554a
+}

@@ -27,3 +27,41 @@ code {
   align-items: center;
   padding: 2rem;
 }
+
+.container {
+  width: 100%;
+  max-width: 769px;
+  /* padding: 1rem; */
+  margin: 0 auto;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  /* width: 60%; */
+  /* min-height: 100px; */
+}
+
+.bar {
+  height: 38px;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: preloadAnimation;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+}
+
+@keyframes preloadAnimation{
+  0%{
+      background-position: -769px
+  }
+  100%{
+      background-position: 769px
+  }
+}

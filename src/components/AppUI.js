@@ -7,7 +7,8 @@ import { TodoItem } from './TodoItem/TodoItem.js';
 import { CreateTodoButtom } from './CreateTodoButtom/CreateTodoButtom.js';
 import { TodoForm } from "./TodoForm";
 import { Modal } from "./Modal/Modal.js";
-
+import { MyLoader, LoaderVanilla } from "./contentLoader/contentLoader.js";
+import { EmpatyTodo } from "./EmptyTodo/EmptyTodo.js";
 
 function AppUI(){
     const {error,
@@ -24,10 +25,9 @@ function AppUI(){
             <TodoCounter />
             <TodoSearch />
                 <TodoList > 
-                    {error && <p>estreme panic..</p>}
-                    {loading && <p>Estamos Cargando...</p>}
-                    {(!loading && !searchTodos.length) && <p>Crea tu primer todo uwu</p>}
-                            
+                    {error && <p>extreme panic..</p>}
+                    {loading && (<LoaderVanilla />)}
+                    {(!loading && !searchTodos.length) && (<EmpatyTodo messege="crea tu primer todo uwu"/>)}
                     {searchTodos.map(todo=>(
                         <TodoItem 
                             key={todo.text} 
@@ -37,7 +37,9 @@ function AppUI(){
                             onDelete={()=> deleteTodosEvent(todo.text)}
                         />
                     ))}
+                    {/* <LoaderVanilla /> */}
                 </TodoList>
+                
                 {openModal && (
                     <Modal>
                         <TodoForm />
