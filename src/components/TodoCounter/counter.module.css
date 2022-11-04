@@ -5,3 +5,6 @@
     color: var(--letterTitle);
     margin-top: 4rem;
 }
+.TodoCounter__loading{
+    opacity: 25%;
+}
