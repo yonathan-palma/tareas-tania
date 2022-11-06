@@ -7,9 +7,9 @@ const defaultTodos = [
     {text:'Llorar con la llorona', completed:false}
   ];
   
-const TodoContext = createContext();
+// const TodoContext = createContext();
 
-function TodoProvider(props){
+function useTodos(){
 
     const {item: todos, saveItem: saveTodos, loading, error} = useLocalStorage("TODOS_V1", []);
  
@@ -53,8 +53,7 @@ function TodoProvider(props){
 
     //  Retornamos nuestro proveedor con nuestro contexto en la etiqueta value, 
     //  que recibirá a toda nuestra aplicación, por eso necesitamos la prop children
-    return(
-        <TodoContext.Provider value={{
+    return {
             loading,           
             error,
             todalTodos, 
@@ -67,12 +66,9 @@ function TodoProvider(props){
             addTodo,
             openModal, 
             setOpenModal
-        }}>
-            {props.children}
-        </TodoContext.Provider>
-    )
+        }
 }
 
 {/* <TodoContext.Consumer></TodoContext.Consumer> */}
 
-export {TodoContext, TodoProvider};
+export {useTodos};
