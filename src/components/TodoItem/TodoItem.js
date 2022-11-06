@@ -13,7 +13,7 @@ function TodoItem(props){
 
             <p className={props.state ? item.complate : ''}>{props.text}</p>
             
-            <DeleteIcon onDelete={props.onDelete} />
+            <DeleteIcon onDelete={(e)=>{props.onDelete(e)}} />
         </li>
     );
 }

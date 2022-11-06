@@ -35,9 +35,11 @@ function TodoProvider(props){
         newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
         saveTodos(newTodos);
     }
-    const deleteTodosEvent = (text)=>{
-        const newTodos = todos.filter(todo=>todo.text !== text)
-        saveTodos(newTodos)
+    const deleteTodosEvent = (e, text)=>{
+        e.stopPropagation();
+        // const newTodos = todos.filter(todo=>todo.text !== text)
+        // saveTodos(newTodos)
+        console.log(e.target);
     }
 
     const addTodo = (text)=>{
@@ -46,7 +48,6 @@ function TodoProvider(props){
             completed: false,
             text 
         });
-        console.log(newTodos)
         saveTodos(newTodos)
     }
 
@@ -71,7 +72,6 @@ function TodoProvider(props){
         </TodoContext.Provider>
     )
 }
-
 
 {/* <TodoContext.Consumer></TodoContext.Consumer> */}
 

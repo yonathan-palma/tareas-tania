@@ -34,7 +34,7 @@ function AppUI(){
                             text={todo.text} 
                             state={todo.completed}
                             onComplete={()=> completeTodosEvent(todo.text)}
-                            onDelete={()=> deleteTodosEvent(todo.text)}
+                            onDelete={(e)=> deleteTodosEvent(e, todo.text)}
                         />
                     ))}
                     {/* <LoaderVanilla /> */}
