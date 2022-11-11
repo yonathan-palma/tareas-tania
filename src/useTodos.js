@@ -35,11 +35,11 @@ function useTodos(){
         newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
         saveTodos(newTodos);
     }
-    const deleteTodosEvent = (e, text)=>{
-        e.stopPropagation();
-        // const newTodos = todos.filter(todo=>todo.text !== text)
-        // saveTodos(newTodos)
-        console.log(e.target);
+    const deleteTodosEvent = (text)=>{
+        // e.stopPropagation();
+        const newTodos = todos.filter(todo=>todo.text !== text)
+        saveTodos(newTodos)
+        // console.log(newTodos);
     }
 
     const addTodo = (text)=>{

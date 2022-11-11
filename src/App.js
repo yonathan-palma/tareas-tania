@@ -12,6 +12,7 @@ import { TodoForm } from "./components/TodoForm";
 import { Modal } from "./components/Modal/Modal.js";
 import { MyLoader, LoaderVanilla } from "./components/contentLoader/contentLoader.js";
 import { EmpatyTodo } from "./components/EmptyTodo/EmptyTodo.js";
+import { ChangeAlert } from './components/ChangeStorage/ChangeStorage.js';
 
 
 function App() {
@@ -99,6 +100,7 @@ function App() {
                 </Modal>
             )}
         <CreateTodoButtom setOpenModal={setOpenModal}/>
+        <ChangeAlert />
     </React.Fragment>
 )
 }
